@@ -25,3 +25,7 @@ body {
 .navbar-header {
     padding-right: 40px;
 }
+
+.slide-inner {
+    padding-top: 10%;
+}
