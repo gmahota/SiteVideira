@@ -1,0 +1,1373 @@
+/* @override
+    http://hillydummy.com/wp-content/themes/hillsong/classes/GlobalNavigation/GlobalNav.css?ver=4.3 */
+
+/*
+ *  GLOBAL NAVIGATION
+ *  ----------------------------------------------
+ *
+ *  Date: 2014-02-04
+ *  Author: Hillsong Digital Team
+ *
+ *  Notes: Global Site Wide Navigation styles & Sub Navigation
+ *
+ */
+
+
+
+/*
+//====================================================================
+//
+// MOBILE / SMALL SCREEN (0px - 480px)
+//
+//====================================================================
+*/
+
+/*
+// ---------------------------------------
+// Main Navigation Bar
+// ---------------------------------------
+*/
+#loader {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 200000;
+    background: #FFF;
+    opacity: 1;
+    -webkit-transition: opacity 1s cubic-bezier(0.23,1,0.62,1) 0s;
+    -moz-transition: opacity 1s cubic-bezier(0.23,1,0.62,1) 0s;
+    -ms-transition: opacity 1s cubic-bezier(0.23,1,0.62,1) 0s;
+    -o-transition: opacity 1s cubic-bezier(0.23,1,0.62,1) 0s;
+    transition: opacity 1s cubic-bezier(0.23,1,0.62,1) 0s;
+}
+
+#loader.loadedcomplete {
+    opacity: 0;
+}
+
+#loader img {
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -75px;
+}
+
+#globalNav {
+    background-color: #fff;
+    height: 50px;
+    z-index: 502;/*Was 502*/
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    -webkit-transition: opacity 0.65s cubic-bezier(0.23,1,0.32,1) 0s, background-color 0.1s cubic-bezier(0.23,1,0.32,1) 0s;
+    -moz-transition: opacity 0.65s cubic-bezier(0.23,1,0.32,1) 0s, background-color 0.1s cubic-bezier(0.23,1,0.32,1) 0s;
+    -ms-transition: opacity 0.65s cubic-bezier(0.23,1,0.32,1) 0s, background-color 0.1s cubic-bezier(0.23,1,0.32,1) 0s;
+    -o-transition: opacity 0.65s cubic-bezier(0.23,1,0.32,1) 0s, background-color 0.1s cubic-bezier(0.23,1,0.32,1) 0s;
+    transition: opacity 0.65s cubic-bezier(0.23,1,0.32,1) 0s, background-color 0.1s cubic-bezier(0.23,1,0.32,1) 0s;
+}
+
+.global-nav-bar {
+    margin: auto;
+    padding-right: 50px;
+    height: 100vh;
+}
+
+.global-nav-bar-flyin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: #FFF;
+    z-index: 10;
+    font-family: 'Gotham SSm A', 'Gotham SSm B',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 50px;
+
+    /* upon inspection, this seems redundant. I have commented it so that whoever has opinions otherwise is able to revert */
+    /*-webkit-transform: translate3d(0,-100%,0);
+    -moz-transform: translate3d(0,-100%,0);
+    -ms-transform: translate3d(0,-100%,0);
+    -o-transform: translate3d(0,-100%,0);
+    -transform: translate3d(0,-100%,0);*/
+
+    -webkit-transition: opacity 0.45s cubic-bezier(0.23,1,0.32,1) 0s;
+    -moz-transition: opacity 0.45s cubic-bezier(0.23,1,0.32,1) 0s;
+    -ms-transition: opacity 0.45s cubic-bezier(0.23,1,0.32,1) 0s;
+    -o-transition: opacity 0.45s cubic-bezier(0.23,1,0.32,1) 0s;
+    transition: opacity 0.45s cubic-bezier(0.23,1,0.32,1) 0s;
+
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    -ms-transition-property: -ms-transform, opacity;
+    -o-transition-property: -o-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.global-nav-bar {
+    z-index: 502;
+    position: relative;
+}
+
+.global-nav-bar:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.global-nav-bar ul {
+    float: right;
+    padding-top: 8px;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+}
+.global-nav-bar > ul {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    height: calc(100vh - 125px);
+    display: none;
+}
+
+.global-nav-bar li {
+    list-style-type: none;
+    display: block;
+    position: static;
+}
+
+
+/* anchors */
+.global-nav-bar ul a{
+    color: #FFF;
+    /*display: block;*/
+    font-family: 'Gotham SSm A', 'Gotham SSm B',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    padding: 10px 1vw;
+    font-size: 20px;
+    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0;
+    display: none;
+
+    /* upon inspection, this seems redundant. I have commented it so that whoever has opinions otherwise is able to revert */
+    /*-webkit-transition: color 0.45s cubic-bezier(0.23,1,0.32,1) 0s;*/
+    /*-moz-transition: color 0.45s cubic-bezier(0.23,1,0.32,1) 0s;*/
+    /*-ms-transition: color 0.45s cubic-bezier(0.23,1,0.32,1) 0s;*/
+    /*-o-transition: color 0.45s cubic-bezier(0.23,1,0.32,1) 0s;*/
+    /*transition: color 0.45s cubic-bezier(0.23,1,0.32,1) 0s;*/
+}
+
+.global-nav-bar ul.nav-mobile {
+    display: block;
+    z-index: 11;
+}
+.global-nav-bar a.selected,
+.global-nav-bar a:active{
+    color: #AA9055;
+}
+
+.global-nav-bar a.global-nav-bar-all {
+}
+a.global-nav-bar-all.active {
+    color: #fff;
+    opacity: 1 !important;
+}
+
+/*
+// ---------------------------------------
+// Mobile Specific
+// ---------------------------------------
+*/
+.global-nav-bar-mobile {
+    display: none;
+    position: absolute;
+    top: 55px;
+    width: 100%;
+
+}
+.global-nav-bar-mobile > *{
+    padding: 15px;
+    display: block;
+    color: #FFF;
+}
+a.global-nav-bar-mobile-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 1000;
+    color: #FFF;
+    font-size: 20px;
+}
+
+a.global-nav-bar-mobile-menu {
+    border: 1px solid #111;
+    border-radius: 25px;
+    color: #111;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: .9;
+    padding: 10px 15px 8px;
+    margin: 9px 15px;
+    display: block;
+    right: 0;
+    position: absolute;
+    top: 0;
+    outline: none;
+    text-transform: uppercase;
+    z-index: 530;
+}
+.global-nav-active a.global-nav-bar-mobile-menu {
+  border-color: #fff;
+  color: #fff;
+  padding: 10px 12px 8px;
+}
+
+.global-nav-bar-mobile-title {
+    text-align: center;
+    padding-right: 80px;
+    padding-left: 80px;
+    font-size: 18px;
+    color: #AA9055;
+}
+
+#globalNav .header-top-bar-logo-default,
+#globalNav.flyin .header-top-bar-logo-default,
+.page-template-page-campus #globalNav.flyin .header-top-bar-logo-default,
+#globalNav .header-top-bar-logo-mobile {
+    display: none;
+}
+
+.page-template-unlimited #globalNav .header-top-bar-logo-default,
+.page-template-page-campus #globalNav .header-top-bar-logo-default,
+.page-template-default #globalNav .header-top-bar-logo-default {
+    display: block;
+    float: left;
+    position: relative;
+    top: -12px;
+    z-index: 2;
+}
+
+.page-template-page-campus #globalNav .header-top-bar-logo-default,
+.page-template-default #globalNav .header-top-bar-logo-default {
+  top: 0;
+}
+
+.global-nav-bar-flyin a.header-top-bar-link {
+    color: #111;
+}
+
+
+
+
+/*
+// ---------------------------------------
+// Back Button Navigation Bar
+// ---------------------------------------
+*/
+
+.global-nav-bar .global-nav-bar-back {
+    display: none;
+    padding-top: 15px;
+}
+
+.global-nav-bar .global-nav-bar-back a {
+    font-size: 16px;
+}
+
+.global-nav-bar .global-nav-bar-back a .hillsong-icon-left-arrow{
+    font-size: 0.75rem;
+}
+
+
+/*
+// ---------------------------------------
+// Fly In Header Bar
+// ---------------------------------------
+*/
+.header-top-bar {
+    background-color: #FFF;
+    z-index: 1000;
+    font-family: 'Gotham SSm A', 'Gotham SSm B',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 60px;
+}
+
+.header-top-bar-logo-title{
+    padding-left: 20px;
+    overflow: hidden;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.header-top-logo {
+    float:left;
+    display: block;
+    padding-top: 5px;
+
+}
+
+.header-top-logo img {
+    display: none;
+    height: 40px;
+}
+
+.header-top-logo img.mobile {
+  display: block;
+}
+
+.header-top-bar-title {
+    padding-left: 4px;
+    float: left;
+}
+
+.header-top-bar-title .header-top-bar-link {
+    color: #111;
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 50px;
+    letter-spacing: -0.01em;
+}
+
+.global-nav-active .header-top-bar-title .header-top-bar-link {
+    color: #fff;
+}
+
+.global-nav-active .header-top-logo img {
+  display: inline-block;
+}
+
+.global-nav-active .header-top-logo img.mobile {
+  display: none;
+}
+
+.global-nav-active .global-nav-bar-flyin .header-top-logo img,
+.global-nav-active .global-nav-bar-flyin .header-top-bar-link {
+  display: none;
+}
+
+
+
+/* ---------------------------------------
+// Session Items
+// ---------------------------------------
+*/
+
+.header-user-info,
+.header-search,
+.header-top-bar-cart,
+.language
+ {
+    float: right;
+    margin-top: 15px;
+}
+
+.nav-link {
+    color: #FFF;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+}
+.nav-link:active{
+    color: #AA9055;
+}
+
+.language {
+    position: relative;
+    width: 70px;
+    display: none;
+}
+
+.language-selected {
+    text-transform: uppercase;
+    position: absolute;
+    display: block;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 9px 10px 10px 30px;
+}
+
+.language-selected .hillsong-v2-arrow-down{
+    top: 7px;
+    position: absolute;
+    right: -6px;
+    font-size: 18px;
+}
+
+.language:active a{
+    color: #AA9055;
+    cursor: pointer;
+}
+
+.language-select {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.language-mobile {
+    display: block;
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    width: auto;
+    max-width: none;
+    z-index: 20;
+}
+
+.no-touch .language-mobile {
+    bottom: 15px;
+}
+
+.language-mobile .language-selected {
+    padding: 20px;
+    color: #FFF;
+    position: absolute;
+    right: 15px;
+}
+
+.language-mobile .language-selected .hillsong-v2-arrow-down {
+    top: 15px;
+    right: 0;
+}
+
+.search-reveal-btn {
+    font-size: 14px;
+}
+
+.header-user-info {
+    position: relative;
+    display: block;
+    font-size: 16px;
+}
+.admin-bar .header-user-info {
+    display: none;
+}
+
+.header-user-info a {
+    display: none;
+    color: #fff;
+    margin: 8px 50px 0 0;
+}
+
+
+.header-user-info .header-user-label {
+    display: none;
+}
+.header-user-info:hover .header-user-dropdown {
+    display: block;
+}
+
+ul.header-user-dropdown {
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0;
+    min-width: 175px;
+    position: absolute;
+    right: 5px;
+    display: none;
+    z-index: 1;
+    top: 32px;
+    padding: 10px 0;
+}
+.header-user-dropdown:after, .header-user-dropdown:before {
+    bottom: 100%;
+    left: 90%;
+    border: solid transparent;
+    content: ' ';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.header-user-dropdown:after {
+    border-color: transparent;
+    border-bottom-color: #ffffff;
+    border-width: 7px;
+    margin-left: -7px;
+}
+.header-user-dropdown:before {
+    border-color: transparent;
+    border-bottom-color: #d5d5d5;
+    border-width: 8px;
+    margin-left: -8px;
+}
+
+ul.header-user-dropdown a {
+    display: block;
+    opacity: 1;
+    text-align: left;
+    padding: 10px 5px;
+    width: 100%;
+}
+.header-user-dropdown li {
+    float: none;
+}
+
+.header-user-dropdown a {
+    display: block;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.header-user-dropdown .icon {
+    font-size: 18px;
+    line-height: 0;
+    position: relative;
+    top: 2px;
+}
+.header-user-dropdown a .icon {
+    color: #a1a1a1;
+}
+
+
+
+.header-search {
+    padding-left: 30px;
+    margin-right: 50px;
+    position: relative;
+}
+.header-search a {
+    display: block;
+    line-height: 16px;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.header-search .header-search-label {
+    display: none;
+}
+.header-search .header-search-form {
+    display: none;
+}
+.header-search.is_active a{
+    position: absolute;
+    left: 10px;
+    top: 0;
+
+}
+.header-search.is_active .header-search-label {
+    display: none;
+}
+.header-search.is_active .header-search-form {
+    display: block;
+}
+
+.header-search-form input[type="text"] {
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+    vertical-align: middle;
+    width: 100%;
+    line-height: 16px;
+    color: #000;
+}
+.header-search-form button {
+    -webkit-appearance: none;
+    background: none;
+    border: 0;
+    font-size: 18px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px;
+}
+
+.header-search-form button:focus {
+    outline: none;
+}
+
+.header-top-bar-cart a {
+    margin-right: -10px;
+    line-height: 16px;
+    font-size: 14px;
+    padding: 8px 5px 5px;
+    padding-left: 30px;
+    display: block;
+}
+.header-top-bar-cart a.hide {
+    display: none;
+}
+.header-top-bar-cart-total-items {
+    color: #AA9055;
+    font-size: 13px;
+    padding-left: 5px;
+}
+/*
+// ---------------------------------------
+// Overlay Navigation Bar
+// ---------------------------------------
+*/
+/* gradient overlay */
+.global-nav-overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    z-index: 15;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&amp;0.65+0,0+100;Neutral+Density */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,.5))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.95) 0%,rgba(0,0,0,.5) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.95) 0%,rgba(0,0,0,.5) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.95) 0%,rgba(0,0,0,.5) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.95) 0%,rgba(0,0,0,.5) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+    -webkit-transition: all 0.65s cubic-bezier(0.23,1,0.32,1) 0s;
+    -moz-transition: all 0.65s cubic-bezier(0.23,1,0.32,1) 0s;
+    -ms-transition: all 0.65s cubic-bezier(0.23,1,0.32,1) 0s;
+    -o-transition: all 0.65s cubic-bezier(0.23,1,0.32,1) 0s;
+    transition: all 0.65s cubic-bezier(0.23,1,0.32,1) 0s;
+
+}
+
+
+/*
+// ---------------------------------------
+// Active State Navigation Bar
+// ---------------------------------------
+*/
+.global-nav-bar ul.active {
+    visibility: visible;
+    overflow-y: auto;
+}
+
+.global-nav-bar ul.active.next-panel {
+    visibility: hidden;
+    height: 100%;
+}
+
+.global-nav-bar ul.active.next-panel > li {
+    /* li needs to be visible in order for li > a to be displayed, however
+       a straight visibility:visible makes the fade-in animation flicker
+       here's an animation timed exactly in sync with navitem so that
+       the flicker doesn't happen.
+     */
+    animation-name: navitem-visi;
+    animation-duration: 0.65s;
+    animation-timing-function: steps(2);
+    animation-fill-mode: forwards;
+}
+
+.global-nav-bar ul.active.next-panel > li > a {
+    visibility: hidden;
+}
+
+.global-nav-bar ul.active > li > a {
+    display: block;
+    animation-name: navitem;
+    animation-duration: 0.65s;
+    animation-timing-function: cubic-bezier(0.23,1,0.32,1);
+    animation-fill-mode: forwards;
+}
+
+.global-nav-bar ul.active {
+    padding-bottom: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 55px;
+}
+
+.global-nav-bar ul.active ul{
+    top: 0;
+}
+
+.global-nav-active {
+    overflow: hidden;
+}
+
+.global-nav-active #globalNav {
+  background: transparent;
+}
+.global-nav-active #globalNav .global-nav-overlay{
+    opacity: 1;
+}
+.global-nav-active #globalNav .global-nav-bar-mobile {
+    display: block;
+}
+
+
+.global-nav-bar ul.active > li:nth-child(2) > a {
+    animation-delay: 0.025s;
+}
+
+.global-nav-bar ul.active > li:nth-child(3) > a{
+    animation-delay: 0.05s;
+}
+
+.global-nav-bar ul.active > li:nth-child(4) > a{
+    animation-delay: 0.075s;
+}
+.global-nav-bar ul.active li:nth-child(5) > a{
+    animation-delay: 0.1s;
+}
+
+.global-nav-bar ul.active li:nth-child(6) > a{
+    animation-delay: 0.125s;
+}
+.global-nav-bar ul.active li:nth-child(7) > a{
+    animation-delay: 0.15s;
+}
+
+.global-nav-bar ul.active li:nth-child(8) > a{
+    animation-delay: 0.175s;
+}
+.global-nav-bar ul.active li:nth-child(9) > a{
+    animation-delay: 0.2s;
+}
+
+.global-nav-bar ul.active li:nth-child(10) > a{
+    animation-delay: 0.225s;
+}
+.global-nav-bar ul.active li:nth-child(11) > a{
+    animation-delay: 0.25s;
+}
+
+.global-nav-bar ul.active li:nth-child(12) > a{
+    animation-delay: 0.275s;
+}
+
+.global-nav-bar ul.active li:nth-child(13) > a{
+    animation-delay: 0.3s;
+}
+
+.global-nav-bar ul.active > li:nth-child(14) > a{
+    animation-delay: 0.325s;
+}
+.global-nav-bar ul.active li:nth-child(15) > a{
+    animation-delay: 0.35s;
+}
+
+.global-nav-bar ul.active li:nth-child(16) > a{
+    animation-delay: 0.375s;
+}
+.global-nav-bar ul.active li:nth-child(17) > a{
+    animation-delay: 0.4s;
+}
+
+.global-nav-bar ul.active li:nth-child(18) > a{
+    animation-delay: 0.425s;
+}
+.global-nav-bar ul.active li:nth-child(19) > a{
+    animation-delay: 0.45s;
+}
+
+.global-nav-bar ul.active li:nth-child(20) > a{
+    animation-delay: 0.475s;
+}
+.global-nav-bar ul.active li:nth-child(21) > a{
+    animation-delay: 0.5s;
+}
+
+.global-nav-bar ul.active li:nth-child(22) > a{
+    animation-delay: 0.525s;
+}
+
+@keyframes navitem-visi {
+    from {
+        visibility: hidden;
+    }
+    to {
+        visibility: visible;
+    }
+}
+
+@keyframes navitem {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*
+// ---------------------------------------
+// Flyin Version
+// ---------------------------------------
+*/
+
+#globalNav.flyin .global-nav-bar ul a, .blog #globalNav .global-nav-bar ul a, .header-standard #globalNav .global-nav-bar ul a,
+#globalNav.flyin a.global-nav-bar-mobile-menu, .blog #globalNav a.global-nav-bar-mobile-menu, .header-standard #globalNav a.global-nav-bar-mobile-menu,
+#globalNav.flyin .nav-link, .blog #globalNav .nav-link, .header-standard #globalNav .nav-link{
+    color: #111;
+}
+
+.global-nav-active #globalNav.flyin .global-nav-bar ul a, .global-nav-active #globalNav.flyin .nav-link {
+    color: #fff;
+}
+
+#globalNav.flyin-sticky .global-nav-bar-flyin, .blog #globalNav .global-nav-bar-flyin, .header-standard #globalNav .global-nav-bar-flyin{
+    opacity: 1;
+
+    /* upon inspection, this seems redundant. I have commented it so that whoever has opinions otherwise is able to revert */
+    /*-webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    -transform: translate3d(0,0,0);*/
+}
+.blog.global-nav-active #globalNav .global-nav-bar ul a, .header-standard.global-nav-active #globalNav .global-nav-bar ul a {
+    color: #fff;
+}
+/* ---------------------------------------
+// Tags Items
+// ---------------------------------------
+*/
+#tagsNav {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    z-index: 1;
+    height: 50px;
+}
+
+#tagsNav .tags-nav-bar {
+    background: #f3f3f3;
+    float: right;
+    width: 100%;
+    padding-right: 40px;
+}
+
+#tagsNav .tags-nav-bar ul {
+    float: right;
+}
+
+#tagsNav .tags-nav-bar li {
+    float: none;
+    list-style: none;
+    margin-left: 30px;
+    display: none;
+}
+
+#tagsNav .tags-nav-bar a {
+    color: #111;
+    width: 100%;
+    padding: 15px 0;
+    display: block;
+}
+#tagsNav .tags-nav-bar li.active {
+    display: block;
+}
+#tagsNav .tags-nav-bar a:hover, #tagsNav .tags-nav-bar li.active a {
+    color: #AA9055;
+}
+#tagsNav .tags-nav-bar .current-tag {
+    color: #AA9055;
+    font-size: 15px;
+    margin-right: 5px;
+}
+#tagsNav .nav-trigger {
+    position: absolute;
+    /*right: 10px;*/
+    /*top: 20px;*/
+    clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 15px;
+    padding-right: 15px;
+    background: #f3f3f3;
+}
+
+label[for="nav-trigger"]:after {
+    content: "E";
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    display: inline-block;
+    font-family: "hillsong-icons" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    top: 19px;
+}
+
+#tagsNav .nav-trigger:checked ~ .tags-menu {
+    float: none;
+    text-align: center;
+}
+#tagsNav .nav-trigger:checked ~ .tags-menu li {
+    display: block;
+}
+
+#tagsNav .nav-trigger:checked ~ .tags-menu li a{
+    padding: 10px 0;
+}
+
+/*
+//====================================================================
+//
+// TABLET (Bigger than 768px )
+//
+//====================================================================
+*/
+@media only screen and (min-width: 868px) {
+    #globalNav {
+        height: 75px;
+        /*z-index: 502;*/
+    }
+
+    .global-nav-bar ul.nav-mobile {
+        display: none;
+    }
+
+    .global-nav-bar > ul {
+        position: absolute;
+        top: 13px;
+        display: block;
+        height: 100vh;
+        overflow-y: hidden;
+        overflow-x: visible;
+        text-align: center;
+    }
+
+    #global-nav.right-aligned{
+        float: right;
+        width: auto;
+        z-index: 10;
+        text-align: left;
+        right: -25px;
+        min-width: 125px;
+    }
+
+    .global-nav-bar a.global-nav-bar-all {
+        border: 1px solid #111;
+        border-radius: 25px;
+        color: #111;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 1;
+        padding: 10px 15px 8px;
+        margin: 9px 15px;
+        display: block;
+        position: relative;
+        top: -8px;
+        outline: none;
+        text-transform: uppercase;
+        z-index: 530;
+    }
+
+    .global-nav-bar a.global-nav-bar-all.active {
+      border-color: #fff;
+    }
+
+    .global-nav-bar ul.active{
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        top: 40px;
+    }
+    .global-nav-bar > ul > li{
+        display:inline-block;
+        position: relative;
+        *display:inline; /*IE7*/
+        *zoom:1; /*IE7*/
+    }
+
+    .global-nav-bar > ul > li > a{
+        display: block;
+        opacity: 1;
+    }
+
+    .global-nav-bar ul a {
+        color: #111;
+        text-align: left;
+        font-size: 12px;
+        line-height: 16px;
+        padding: 9px .35vw;
+        text-transform: uppercase;
+    }
+    .global-nav-active .global-nav-bar ul a {
+      color: #fff;
+    }
+
+    .global-nav-active .global-nav-bar ul a.active {
+        color: #AA9055;
+    }
+
+    .global-nav-bar ul ul {
+        padding-top: 0;
+        padding-right: 0;
+        position: absolute;
+        min-width: 180px;
+    }
+    .global-nav-bar ul ul a{
+        color: #fff;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .global-nav-bar-link.global-nav-bar-all:hover {
+      border-color: #AA9055;
+      color: #AA9055;
+    }
+
+    /* back button logic -- hide for first level panel */
+    .global-nav-bar > ul > li > ul > li.global-nav-bar-back {
+        display: none;
+    }
+
+    .global-nav-bar-flyin {
+        height: 95px;
+        padding-top: 17px;
+    }
+
+    .header-top-bar-logo-title {
+        padding-left: 20px;
+        padding-top: 8px;
+    }
+
+    .header-top-logo img {
+        height: 50px;
+    }
+
+    .header-top-bar-title {
+        padding-left: 10px;
+        float: left;
+        padding-top: 5px;
+    }
+    .header-top-bar-title .header-top-bar-link {
+        font-size: 14px;
+    }
+
+    .header-search {
+      margin-top: 22px;
+    }
+
+    a.global-nav-bar-mobile-menu {
+      display: none;
+        top: 10px;
+    }
+}
+
+
+/*
+//====================================================================
+//
+// DEFAULT (Bigger than 1024px )
+//
+//====================================================================
+*/
+@media only screen and (min-width: 1025px) {
+  #globalNav {
+    height: 100px;
+  }
+
+  #global-nav.right-aligned{
+      right: 0;
+      min-width: 200px;
+  }
+
+  .header-top-bar-logo-title {
+    padding-left: 40px;
+    padding-top: 10px;
+  }
+
+  .header-top-bar-title {
+    padding-top: 15px;
+  }
+
+  .header-top-bar-title .header-top-bar-link {
+      color: #fff;
+      font-size: 16px;
+  }
+
+  .header-top-logo img {
+      display: inline-block;
+      height: 70px;
+  }
+
+  .header-top-logo img.mobile {
+    display: none;
+  }
+
+  .page-template-page-campus #globalNav .header-top-bar-logo-default,
+  .page-template-default #globalNav .header-top-bar-logo-default {
+    top: -12px;
+  }
+
+  a.global-nav-bar-mobile-menu {
+      top: 23px;
+  }
+
+  .global-nav-bar ul {
+    top: 18px;
+  }
+
+  .global-nav-bar ul a {
+      font-size: 13px;
+      color: #fff;
+  }
+
+  .global-nav-bar ul ul a {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .global-nav-bar .global-nav-bar-link.global-nav-bar-all {
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    margin-left: .5vw;
+    padding: 10px 30px 8px 0;
+    position: relative;
+    right: 0;
+    text-transform: uppercase;
+  }
+
+  .global-nav-bar .global-nav-bar-link.global-nav-bar-all.active {
+    padding: 10px 30px 8px 0;
+  }
+  .global-nav-bar .global-nav-bar-link.global-nav-bar-all:hover,
+  .global-nav-bar .global-nav-bar-link.global-nav-bar-all.active:hover {
+    color: #AA9055;
+  }
+
+
+  .global-nav-bar .global-nav-bar-all span,
+  .global-nav-bar .global-nav-bar-all span + span {
+    background-color: #fff;
+    display: block;
+    height: 3px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 25px;
+    -webkit-transition: all 0.45s cubic-bezier(0.23,1,0.32,1) 0s;
+    -moz-transition: all 0.45s cubic-bezier(0.23,1,0.32,1) 0s;
+    -ms-transition: all 0.45s cubic-bezier(0.23,1,0.32,1) 0s;
+    -o-transition: all 0.45s cubic-bezier(0.23,1,0.32,1) 0s;
+    transition: all 0.45s cubic-bezier(0.23,1,0.32,1) 0s;
+  }
+
+  .global-nav-bar .global-nav-bar-all span + span {
+    top: 18px;
+  }
+
+  .flyin-sticky .global-nav-bar .global-nav-bar-all span,
+  .flyin-sticky .global-nav-bar .global-nav-bar-all span:before {
+    background-color: #111;
+  }
+
+  .flyin-sticky .global-nav-bar .global-nav-bar-all.active span,
+  .flyin-sticky .global-nav-bar .global-nav-bar-all.active span:before {
+    background-color: #fff;
+  }
+
+  .global-nav-bar .global-nav-bar-all:hover span,
+  .global-nav-bar .global-nav-bar-all:hover span:before,
+  .flyin-sticky .global-nav-bar .global-nav-bar-all:hover span,
+  .flyin-sticky .global-nav-bar .global-nav-bar-all:hover span:before {
+    background-color: #AA9055;
+  }
+
+  .global-nav-bar .global-nav-bar-all.active span {
+    top: 14px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .global-nav-bar .global-nav-bar-all.active span + span {
+    top: 14px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .header-search {
+    margin-right: 0;
+    margin-top: 13px;
+  }
+
+}
+
+/*
+//====================================================================
+//
+// LARGE SCREEN ( Bigger than 1025px )
+//
+//====================================================================
+*/
+@media only screen and (min-width: 1025px) {
+
+  #globalNav {
+    background-color: transparent;
+  }
+    /*
+    //====================================================================
+    // HOVER STATES
+    //====================================================================
+    */
+    .global-nav-bar a:hover {
+        color: #AA9055;
+    }
+
+    #globalNav.flyin .global-nav-bar ul a:hover,
+    #globalNav.flyin a.global-nav-bar-mobile-menu:hover,
+    #globalNav.flyin .nav-link:hover {
+        color: #AA9055;
+    }
+    .header-search-form button:hover {
+        cursor: pointer;
+    }
+
+    .language:hover a{
+        color: #AA9055;
+        cursor: pointer;
+    }
+    .nav-link:hover{
+        color: #AA9055;
+    }
+
+    a.global-nav-bar-all:hover {
+        opacity: 1 !important;
+    }
+
+    /*
+    //====================================================================
+    */
+    .global-nav-active #globalNav .global-nav-bar-mobile {
+        display: none;
+    }
+    .global-nav-bar .global-nav-bar-back,
+    .language {
+        display: block;
+    }
+
+    .global-nav-bar {
+        padding-top: 20px;
+    }
+    .global-nav-bar-flyin {
+        height: 95px;
+        padding-top: 17px;
+    }
+
+    .header-top-bar {
+        height: 97px;
+    }
+
+    .header-top-bar-title {
+        padding-left: 10px;
+        float: left;
+        padding-top: 5px;
+    }
+
+    .header-top-bar-logo-title {
+        padding-left: 40px;
+    }
+    .header-top-bar-title a {
+        font-size: 18px;
+    }
+
+    .header-user-info,
+    .header-search,
+    .header-top-bar-cart
+     {
+        margin-top: 8px;
+        z-index: 11;
+        position: relative;
+    }
+
+    .header-top-logo {
+        padding-top: 0;
+    }
+    #tagsNav .tags-nav-bar {
+        padding-right: 50px;
+    }
+    #tagsNav {
+        top: 95px;
+    }
+
+    #tagsNav .tags-nav-bar ul {
+        text-align: center;
+        width: 100%;
+    }
+
+    #tagsNav .tags-nav-bar li {
+        display: inline-block;
+    }
+
+    #tagsNav .tags-nav-bar li.active {
+        display: inline-block;
+    }
+
+    #tagsNav .tags-nav-bar a {
+        padding: 15px 0;
+    }
+
+    #globalNav {
+        height: 100px;
+    }
+
+    #tagsNav .nav-trigger {
+        display: none;
+    }
+    #tagsNav .tags-nav-bar .current-tag {
+        display: none;
+    }
+    label[for="nav-trigger"] {
+        display: none;
+    }
+
+    #globalNav .header-top-bar-logo-default {
+        margin-top: -3px;
+    }
+
+    .language-mobile {
+        display: none;
+    }
+
+    .global-nav-active .language-mobile {
+      display: block;
+    }
+
+}
+
+@media only screen and (min-width: 1280px) {
+
+  .global-nav-bar ul a {
+    font-size: 15px;
+  }
+
+}

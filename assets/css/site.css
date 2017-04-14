@@ -1,0 +1,24 @@
+body {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Gotham SSm A', 'Gotham SSm B','Gotham',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 20px;
+    color: #464646;
+    position: relative;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.navbar-nav>li>a {
+    box-shadow: none;
+    color: #ffffff !important;
+    font-size: .80em;
+    font-weight: 400;
+    padding: 25px 20px;
+}
